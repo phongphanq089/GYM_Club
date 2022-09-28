@@ -1,0 +1,60 @@
+.Join {
+  display: flex;
+  padding: 0 2rem;
+  gap: 10rem;
+  .left-j {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+
+    .top {
+      position: absolute;
+      width: 10rem;
+      border: 2px solid var(--orange);
+      border-radius: 20%;
+      margin: -10px 0;
+    }
+  }
+  .right-j {
+    .email-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      background: var(--gray);
+      padding: 1rem;
+      border-radius: 5px;
+
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+
+        &::placeholder {
+          color: var(--white);
+          font-size: 1rem;
+        }
+      }
+      button.bnt-j {
+        background-color: var(--orange);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .Join {
+    flex-direction: column;
+    gap: 1rem;
+
+    .left-j {
+      font-size: x-large;
+      flex-direction: column;
+    }
+    .right-j {
+      margin: 0 3rem;
+    }
+  }
+}

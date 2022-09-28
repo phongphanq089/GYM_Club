@@ -1,0 +1,260 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+
+  //  phan nay dung cho ben trai
+  .lelf-h {
+    padding: 2rem;
+    padding-top: 1.5rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .the-best-ad {
+      margin-top: 4rem;
+      background-color: #363d42;
+      border-radius: 4rem;
+      width: fit-content;
+      padding: 20px 13px;
+      text-transform: uppercase;
+      color: var(--white);
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 2;
+      span {
+        z-index: 2;
+      }
+      .btn {
+        position: absolute;
+        background-color: var(--orange);
+        width: 5.4rem;
+        left: 8px;
+        height: 80%;
+        border-radius: 3rem;
+        z-index: 1;
+      }
+    }
+
+    // phan nay la hero header
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      font-size: 4.5rem;
+      font-weight: bold;
+      color: var(--white);
+      text-overflow: initial;
+
+      div:nth-of-type(3) {
+        font-size: 1rem;
+        font-weight: 200;
+        text-transform: none;
+        letter-spacing: 1px;
+        width: 80%;
+      }
+    }
+
+    // figures
+    .figures {
+      display: flex;
+      gap: 2rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        span:nth-of-type(1) {
+          color: var(--white);
+          font-size: 2rem;
+        }
+        span:nth-of-type(2) {
+          color: var(--gray);
+        }
+      }
+    }
+
+    // hero buttons
+    .hero-button {
+      display: flex;
+      gap: 1rem;
+      font-weight: normal;
+      button:nth-child(1) {
+        color: var(--white);
+        background-color: var(--orange);
+        width: 8rem;
+        border-radius: 4px;
+      }
+      button:nth-child(1) {
+        color: var(--white);
+        background-color: var(--orange);
+        width: 8rem;
+        border-radius: 4px;
+      }
+      button:nth-child(2) {
+        color: var(--white);
+        background-color: transparent;
+        width: 8rem;
+        border-radius: 4px;
+        border: 2px solid var(--orange);
+      }
+    }
+  }
+
+  //   phan nay danh cho cho ben trai
+  .rigth-h {
+    flex: 1;
+    position: relative;
+    background-color: var(--orange);
+
+    .btn {
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      color: var(--black);
+    }
+    .heart-rate {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: var(--darkGrey);
+      width: fit-content;
+      padding: 1rem;
+      position: absolute;
+      top: 7rem;
+      right: 4rem;
+      border-radius: 5px;
+
+      img {
+        width: 30px;
+        padding-bottom: 10px;
+      }
+      span:nth-of-type(1) {
+        color: var(--gray);
+        margin-bottom: 6px;
+      }
+      span:nth-of-type(2) {
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  //   iamge bnanner
+  .Hero-Image {
+    position: absolute;
+    width: 23rem;
+    top: 10rem;
+    right: 8rem;
+  }
+  .Hero-Image-back {
+    position: absolute;
+    width: 15rem;
+    top: 4rem;
+    right: 20rem;
+    z-index: -1;
+  }
+  //   clories
+  .calories {
+    position: absolute;
+    background: var(--caloryCard);
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    padding: 1rem;
+    top: 32rem;
+    right: 28rem;
+    border-radius: 10px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      span:nth-of-type(1) {
+        color: var(--gray);
+      }
+      span:nth-of-type(2) {
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .blur-h {
+    width: 23rem;
+    height: 30rem;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+
+    .rigth-h {
+      background: none;
+      position: relative;
+      .heart-rate {
+        left: 5rem;
+        top: 5rem;
+      }
+      .calories {
+        position: relative;
+        top: 1rem;
+        left: 3rem;
+      }
+      .Hero-Image {
+        position: relative;
+        width: 20rem;
+        left: 16rem;
+        top: 6rem;
+        align-items: center;
+      }
+      .Hero-Image-back {
+        width: 15rem;
+        top: 4rem;
+        left: 8rem;
+      }
+    }
+  }
+  .blur-h {
+    width: 14rem;
+  }
+  .the-best-ad {
+    margin-top: 0;
+    font-size: small;
+    align-self: center;
+    transform: scale(0.8);
+  }
+  .hero-text {
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .figures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      span:nth-of-type(1) {
+        color: var(--white);
+        font-size: 2rem;
+      }
+      span:nth-of-type(2) {
+        color: var(--gray);
+      }
+    }
+  }
+  .hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

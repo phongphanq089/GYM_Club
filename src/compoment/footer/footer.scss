@@ -1,0 +1,52 @@
+.footer-container {
+  position: relative;
+  hr {
+    border: 1px solid var(--white);
+  }
+  .footer {
+    display: flex;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 20rem;
+    .icon-footer-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+      }
+    }
+    .logo-f {
+      img {
+        width: 10rem;
+      }
+    }
+  }
+  .blur-f {
+    width: 30rem;
+    height: 30rem;
+    top: 0;
+    right: 0;
+  }
+  .scroll-home {
+    position: absolute;
+    width: 4rem;
+    height: 2rem;
+    background-color: aqua;
+    border-radius: 5px;
+    right: 5rem;
+    top: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+}

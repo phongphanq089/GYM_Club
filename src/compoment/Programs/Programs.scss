@@ -1,0 +1,76 @@
+.Programs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem;
+
+  .programs-header {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--white);
+    font-style: italic;
+  }
+
+  .programs-categories {
+    display: flex;
+    gap: 1rem;
+    .category {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--gray);
+      padding: 2rem;
+      gap: 1rem;
+      justify-content: space-between;
+      &:hover {
+        background: var(--planCard);
+      }
+      .image {
+        width: 3rem;
+        height: 3rem;
+        fill: var(--white);
+      }
+
+      span:nth-of-type(1) {
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: bold;
+      }
+      span:nth-of-type(2) {
+        font-size: 1rem;
+        color: var(--white);
+        line-height: 25px;
+      }
+
+      .join-now {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        span {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .programs-header {
+    flex-direction: column;
+    gap: 2rem;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+  }
+  .programs-categories {
+    flex-direction: column;
+    padding: 3rem;
+  }
+}
