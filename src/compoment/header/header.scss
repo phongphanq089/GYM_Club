@@ -4,18 +4,15 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  @include ipad {
-    flex-direction: column;
-    background-color: rgb(61, 48, 48);
-    color: #fff;
-    padding: 3rem;
-    position: absolute;
-    right: 1px;
-    top: 1px;
-    z-index: 99;
-  }
+   .bar {
+    font-size: 2rem;
+    background-color: RGB(223, 207, 190);
+    padding: 0.2rem 2rem;
+    border-radius: 1rem;
+    
+   }
   @include mobile {
-    display: none;
+    // display: none;
   }
   .logo {
     width: 10rem;
@@ -28,10 +25,32 @@
     align-items: center;
     gap: 2rem;
     color: var(--white);
+    @include ipadMini {
+      flex-direction: column;
+      background-color: rgb(61, 48, 48);
+      color: #fff;
+      padding: 3rem;
+      position: fixed;
+      right: 1px;
+      top: 1px;
+      z-index: 99;
+      transition: all 0.5s ease;
+      border-radius: 2rem;
+    }
 
     li:hover {
       color: var(--orange);
       cursor: pointer;
+    }
+  }
+  .icon-close {
+    display: none;
+    @include ipadMini {
+      display: block;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 20px;
     }
   }
 }

@@ -32,6 +32,10 @@
     @include ipad {
       flex-direction: column;
     }
+    @include mobile {
+       width: 90%;
+       margin: auto;
+    }
     .plan {
       display: flex;
       flex-direction: column;

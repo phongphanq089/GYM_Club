@@ -16,20 +16,36 @@
     span:nth-of-type(1) {
       color: var(--orange);
       font-weight: bold;
+      @include mobile {
+        margin: auto;
+        font-size: 2rem;
+      }
     }
     span:nth-of-type(2),
     span:nth-of-type(3) {
       font-weight: bold;
       font-size: 3rem;
+      @include mobile {
+        font-size: 1.5rem;
+        margin: auto;
+      }
     }
     .content {
       @include ipad {
         padding-right: 3rem;
       }
+      @include mobile{
+        text-align: center;
+        margin-left: 2rem;
+      }
+     
       span {
         color: var(--white);
         letter-spacing: 2px;
         line-height: 40px;
+        @include mobile {
+          font-size: 1rem;
+                 }
       }
     }
     .footer {
@@ -88,6 +104,11 @@
         width: 29rem;
         height: 26rem;
       }
+      @include mobile {
+        width: 20rem;
+        height: 23rem;
+        margin-left: 6rem;
+      }
     }
     .arrows {
       position: absolute;
@@ -100,6 +121,9 @@
         position: relative;
         top: 2rem;
         right: 2rem;
+      }
+      @include mobile {
+        right: 1rem;
       }
       img {
         width: 30px;
