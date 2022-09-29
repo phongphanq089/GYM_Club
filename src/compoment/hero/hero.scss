@@ -1,7 +1,11 @@
+@use "../../SCSS/" as *;
+
 .hero {
   display: flex;
   justify-content: space-between;
-
+  @include ipad {
+    flex-direction: column;
+  }
   //  phan nay dung cho ben trai
   .lelf-h {
     padding: 2rem;
@@ -24,6 +28,12 @@
       justify-content: flex-start;
       align-items: center;
       z-index: 2;
+      @include ipad {
+        margin-top: 0;
+        font-size: small;
+        align-self: center;
+        transform: scale(0.8);
+      }
       span {
         z-index: 2;
       }
@@ -48,6 +58,17 @@
       color: var(--white);
       text-overflow: initial;
 
+      @include ipad {
+        font-size: x-large;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @include mobile {
+        width: 60%;
+        font-size: 3.5rem;
+        margin: auto;
+      }
       div:nth-of-type(3) {
         font-size: 1rem;
         font-weight: 200;
@@ -61,6 +82,12 @@
     .figures {
       display: flex;
       gap: 2rem;
+      @include ipad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
 
       div {
         display: flex;
@@ -81,6 +108,11 @@
       display: flex;
       gap: 1rem;
       font-weight: normal;
+      @include ipad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       button:nth-child(1) {
         color: var(--white);
         background-color: var(--orange);
@@ -108,6 +140,10 @@
     flex: 1;
     position: relative;
     background-color: var(--orange);
+    @include ipad {
+      background: none;
+      position: relative;
+    }
 
     .btn {
       position: absolute;
@@ -126,7 +162,14 @@
       top: 7rem;
       right: 4rem;
       border-radius: 5px;
-
+      @include ipad {
+        left: 5rem;
+        top: 5rem;
+      }
+      @include mobile {
+        top: 1rem;
+        z-index: 10;
+      }
       img {
         width: 30px;
         padding-bottom: 10px;
@@ -148,113 +191,71 @@
     width: 23rem;
     top: 10rem;
     right: 8rem;
-  }
-  .Hero-Image-back {
-    position: absolute;
-    width: 15rem;
-    top: 4rem;
-    right: 20rem;
-    z-index: -1;
-  }
-  //   clories
-  .calories {
-    position: absolute;
-    background: var(--caloryCard);
-    display: flex;
-    gap: 2rem;
-    width: fit-content;
-    padding: 1rem;
-    top: 32rem;
-    right: 28rem;
-    border-radius: 10px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      span:nth-of-type(1) {
-        color: var(--gray);
-      }
-      span:nth-of-type(2) {
-        color: var(--white);
-        font-size: 1.5rem;
-      }
+    @include ipad {
+      position: relative;
+      width: 20rem;
+      left: 16rem;
+      top: 6rem;
+      align-items: center;
     }
-  }
-  .blur-h {
-    width: 23rem;
-    height: 30rem;
-    left: 0;
+    @include mobile {
+      left: 5rem;
+    }
   }
 }
-
-@media screen and (max-width: 768px) {
-  .hero {
+.Hero-Image-back {
+  position: absolute;
+  width: 15rem;
+  top: 4rem;
+  right: 20rem;
+  z-index: -1;
+  @include ipad {
+    width: 15rem;
+    top: 4rem;
+    left: 8rem;
+  }
+  @include mobile {
+    left: 2rem;
+  }
+}
+//   clories
+.calories {
+  position: absolute;
+  background: var(--caloryCard);
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  padding: 1rem;
+  top: 32rem;
+  right: 28rem;
+  border-radius: 10px;
+  @include ipad {
+    position: relative;
+    top: 1rem;
+    left: 3rem;
+  }
+  @include mobile {
+    top: 2rem;
+  }
+  div {
+    display: flex;
     flex-direction: column;
-
-    .rigth-h {
-      background: none;
-      position: relative;
-      .heart-rate {
-        left: 5rem;
-        top: 5rem;
-      }
-      .calories {
-        position: relative;
-        top: 1rem;
-        left: 3rem;
-      }
-      .Hero-Image {
-        position: relative;
-        width: 20rem;
-        left: 16rem;
-        top: 6rem;
-        align-items: center;
-      }
-      .Hero-Image-back {
-        width: 15rem;
-        top: 4rem;
-        left: 8rem;
-      }
+    justify-content: space-around;
+    span:nth-of-type(1) {
+      color: var(--gray);
+    }
+    span:nth-of-type(2) {
+      color: var(--white);
+      font-size: 1.5rem;
     }
   }
-  .blur-h {
+}
+.blur-h {
+  width: 23rem;
+  height: 30rem;
+  left: 0;
+
+  @include ipad {
     width: 14rem;
-  }
-  .the-best-ad {
-    margin-top: 0;
-    font-size: small;
-    align-self: center;
-    transform: scale(0.8);
-  }
-  .hero-text {
-    font-size: x-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .figures {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
-    div {
-      display: flex;
-      flex-direction: column;
-
-      span:nth-of-type(1) {
-        color: var(--white);
-        font-size: 2rem;
-      }
-      span:nth-of-type(2) {
-        color: var(--gray);
-      }
-    }
-  }
-  .hero-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }

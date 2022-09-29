@@ -1,8 +1,11 @@
+@use "../../SCSS/" as *;
 .Testimonials {
   display: flex;
   gap: 1rem;
   padding: 0 1rem;
-
+  @include ipad {
+    flex-direction: column;
+  }
   .letf-t {
     display: flex;
     flex: 1 1;
@@ -20,6 +23,9 @@
       font-size: 3rem;
     }
     .content {
+      @include ipad {
+        padding-right: 3rem;
+      }
       span {
         color: var(--white);
         letter-spacing: 2px;
@@ -40,7 +46,12 @@
   .rigth-t {
     flex: 1 1;
     position: relative;
-
+    @include ipad {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     div:nth-of-type(1) {
       position: absolute;
       border: 1px solid orange;
@@ -48,6 +59,9 @@
       height: 20rem;
       top: 1rem;
       right: 10rem;
+      @include ipad {
+        display: none;
+      }
     }
     div:nth-of-type(2) {
       position: absolute;
@@ -56,6 +70,9 @@
       height: 20rem;
       top: 4rem;
       right: 7rem;
+      @include ipad {
+        display: none;
+      }
     }
     .image-t {
       width: 17rem;
@@ -64,6 +81,13 @@
       position: absolute;
       top: 2rem;
       right: 8rem;
+      @include ipad {
+        top: 0;
+        right: 3rem;
+        position: relative;
+        width: 29rem;
+        height: 26rem;
+      }
     }
     .arrows {
       position: absolute;
@@ -72,44 +96,14 @@
       gap: 1rem;
       align-items: center;
       bottom: 3rem;
-      img {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
-}
-@media screen and (max-width: 768px) {
-  .Testimonials {
-    flex-direction: column;
-    .letf-t {
-      .content {
-        padding-right: 3rem;
-      }
-    }
-    .rigth-t {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      div:nth-of-type(1) {
-        display: none;
-      }
-      div:nth-of-type(2) {
-        display: none;
-      }
-
-      .image-t {
-        top: 0;
-        right: 3rem;
-        position: relative;
-        width: 29rem;
-        height: 26rem;
-      }
-      .arrows {
+      @include ipad {
         position: relative;
         top: 2rem;
         right: 2rem;
+      }
+      img {
+        width: 30px;
+        height: 30px;
       }
     }
   }

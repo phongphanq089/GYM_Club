@@ -1,3 +1,5 @@
+@use "../../SCSS/" as *;
+
 .plans-container {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,13 @@
     font-size: 3rem;
     font-weight: bold;
 
+    @include mobile {
+      font-size: 2rem;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
     span:nth-of-type(2) {
       color: var(--white);
     }
@@ -20,7 +29,9 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-
+    @include ipad {
+      flex-direction: column;
+    }
     .plan {
       display: flex;
       flex-direction: column;
@@ -29,6 +40,10 @@
       padding: 1.5rem;
       color: var(--white);
       animation: all 0.5s ease;
+
+      @include ipad {
+        padding: 3.5rem;
+      }
       .name {
         font-size: 1rem;
         font-weight: bold;
@@ -69,14 +84,5 @@
     width: 30rem;
     height: 40rem;
     right: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .plans {
-    flex-direction: column;
-    .plan {
-      padding: 3.5rem;
-    }
   }
 }

@@ -30,7 +30,7 @@ const Hero = () => {
                 {/* header hero */}
                 <div className="hero-text">
                     <div>
-                        <span className='stroke-text'>SHAPE  </span>
+                        <span className='stroke-text'>SHAPE </span>
                         <span>YOURE</span>
                     </div>
                     <div>

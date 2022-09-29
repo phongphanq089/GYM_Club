@@ -1,3 +1,5 @@
+@use "../../SCSS/" as *;
+
 .Programs {
   display: flex;
   flex-direction: column;
@@ -12,11 +14,28 @@
     font-weight: bold;
     color: var(--white);
     font-style: italic;
+
+    @include ipad {
+      flex-direction: column;
+      gap: 2rem;
+      font-size: x-large;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .programs-categories {
     display: flex;
     gap: 1rem;
+    @include ipad {
+      flex-direction: column;
+      padding: 3rem;
+    }
+    @include mobile {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
     .category {
       display: flex;
       flex-direction: column;
@@ -58,19 +77,5 @@
         }
       }
     }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .programs-header {
-    flex-direction: column;
-    gap: 2rem;
-    font-size: x-large;
-    align-items: center;
-    justify-content: center;
-  }
-  .programs-categories {
-    flex-direction: column;
-    padding: 3rem;
   }
 }

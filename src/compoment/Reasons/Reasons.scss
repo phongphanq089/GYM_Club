@@ -1,16 +1,70 @@
+@use "../../SCSS/" as *;
+
 .Reasons {
   padding: 0 2rem;
   display: flex;
   grid-template: 2rem;
+  display: grid;
+  grid-template-columns: 50% 45%;
 
+  @include ipad {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  gap: 5%;
   .left-r {
     flex: 1 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    @include ipad {
+      grid-auto-rows: auto;
+      overflow: hidden;
+    }
+    @include mobile {
+      width: 95%;
+    }
     grid-auto-rows: 1fr;
-    img {
-      object-fit: cover;
+    img:nth-of-type(1) {
+      width: 12rem;
+      height: 28rem;
+      grid-row: 1/3;
+      @include ipad {
+        width: 12rem;
+        height: 28rem;
+        grid-row: 1/3;
+        object-fit: cover;
+      }
+      @include mobile {
+        width: 9rem;
+      }
+    }
+    img:nth-of-type(2) {
+      width: 25rem;
+      height: 18rem;
+      grid-column: 2/4;
+
+      @include ipad {
+        width: 19rem;
+        height: 18rem;
+        grid-column: 2/4;
+        object-fit: cover;
+      }
+    }
+    img:nth-of-type(3) {
+      width: 15rem;
+      @include ipad {
+        width: 11rem;
+        object-fit: cover;
+      }
+    }
+    img:nth-of-type(4) {
+      width: 10rem;
+
+      @include ipad {
+        width: 8rem;
+        object-fit: cover;
+      }
     }
   }
 
@@ -19,7 +73,12 @@
     gap: 1rem;
     display: flex;
     flex-direction: column;
-
+    @include ipad {
+      margin-top: 2rem;
+    }
+    @include mobile {
+      width: 90%;
+    }
     .header {
       color: var(--orange);
       font-weight: bold;
@@ -29,7 +88,9 @@
       color: var(--white);
       font-weight: bold;
       font-size: 3rem;
-
+      @include mobile {
+        font-size: 2rem;
+      }
       span {
         padding: 0 0.5rem;
       }
@@ -55,36 +116,6 @@
       img {
         width: 2.5rem;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .Reasons {
-    flex-direction: column;
-
-    .left-r {
-      grid-auto-rows: auto;
-      overflow: hidden;
-      img:nth-of-type(1) {
-        width: 12rem;
-        height: 28rem;
-        grid-row: 1/3;
-      }
-      img:nth-of-type(2) {
-        width: 19rem;
-        height: 18rem;
-        grid-column: 2/4;
-      }
-      img:nth-of-type(3) {
-        width: 11rem;
-      }
-      img:nth-of-type(4) {
-        width: 8rem;
-      }
-    }
-    .right-r {
-      margin-top: 2rem;
     }
   }
 }

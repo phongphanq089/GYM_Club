@@ -1,7 +1,22 @@
+@use "../../SCSS/" as *;
+
 .header {
   display: flex;
   justify-content: space-between;
-
+  position: relative;
+  @include ipad {
+    flex-direction: column;
+    background-color: rgb(61, 48, 48);
+    color: #fff;
+    padding: 3rem;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 99;
+  }
+  @include mobile {
+    display: none;
+  }
   .logo {
     width: 10rem;
     height: 3rem;
@@ -18,14 +33,5 @@
       color: var(--orange);
       cursor: pointer;
     }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header-menu {
-    flex-direction: column;
-    background-color: rgb(61, 48, 48);
-    color: #fff;
-    padding: 3rem;
   }
 }
